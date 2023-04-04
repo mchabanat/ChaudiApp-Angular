@@ -1,0 +1,8 @@
+<main>
+    <h2>Tous les rapports</h2>
+    <div class="liste-rapports">
+        <ng-container *ngFor="let unRapport of listeRapports$ | async">
+            <app-rapport [leRapport]="unRapport"></app-rapport>
+        </ng-container>
+    </div>
+</main>

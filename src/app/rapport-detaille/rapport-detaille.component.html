@@ -1,0 +1,32 @@
+<main>
+    <div class="unRapport">
+        <h2>Rapport n°{{ unRapport.id }}</h2>
+        <div id="bandeau">
+            <h3>Informations du rapport</h3>
+            <p><strong>Nom technicien :</strong> {{ unRapport.nomTechnicien }}</p>
+            <p><strong>Date de l'intervention :</strong> {{ unRapport.dateIntervention | date: "dd/MM/yyyy" }}</p>
+        </div>
+        <div id="client">
+            <h3>Informations client</h3>
+            <p><strong>Nom :</strong> {{ unRapport.nomClient }}</p>
+            <p><strong>Adresse :</strong> {{ unRapport.adresseClient }}</p>
+        </div>
+        <div id="produit">
+            <h3>Détails du produit</h3>
+            <p><strong>Marque de la chaudière :</strong> {{ unRapport.marque }}</p>
+            <p><strong>Modèle de la chaudière :</strong> {{ unRapport.modele }}</p>
+            <p><strong>Numéro de série de la chaudière :</strong> {{ unRapport.numSerie }}</p>
+            <p><strong>Date de mise en service :</strong> {{ unRapport.dateMiseEnService | date: "dd/MM/yyyy" }}</p>
+        </div>
+        <div id="intervention"> 
+            <h3>Détails de l'intervention</h3>
+            <p><strong>Durée de l'intervention :</strong> {{ unRapport.dureeIntervention }} minutes</p>
+            <p><strong>Description :</strong> {{ unRapport.description }}</p>
+        </div>
+    </div>
+
+    <div class="boutons">
+        <a routerLink="/home" class="link-consultation">Revenir à l'accueil</a>
+        <a routerLink="/liste-rapports" class="link-consultation">Revenir à la liste des rapport</a>
+    </div>
+</main>

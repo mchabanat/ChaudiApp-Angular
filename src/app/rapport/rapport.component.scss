@@ -1,0 +1,53 @@
+.uneLigne {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 700px;
+
+    a {
+        cursor: pointer;
+        background-color: rgba(230, 63, 12, 0.2);
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        height: 75px;
+        width: 100%;
+        color: black;
+        text-decoration: none;
+        padding: 0 15px;
+    
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+    
+            .soustitre {
+                font-size: 0.8em;
+                font-weight: 400;
+            }
+        }
+    
+        #id {
+            width: 5%;
+        }
+        #date {
+            width: 25%;
+        }
+        #client, #technicien {
+            width: 35%;
+        }
+
+        transition: transform 0.2s ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.03);
+    }
+}

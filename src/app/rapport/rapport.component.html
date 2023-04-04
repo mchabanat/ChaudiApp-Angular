@@ -1,0 +1,18 @@
+<div class="uneLigne">
+    <a routerLink="/rapport-detaille/{{ unRapport.id }}">
+        <div id="id">
+            <p>{{ unRapport.id }}</p>
+        </div>
+        <div id="client">
+            <p>{{ unRapport.nomClient }}</p>
+        </div>
+        <div id="date">
+            <p class="soustitre">Intervention le</p>
+            <strong>{{ unRapport.dateIntervention | date: "dd/MM/yyyy" }}</strong>
+        </div>
+        <div id="technicien"> 
+            <p class="soustitre">Réalisé par</p>
+            <strong>{{ unRapport.nomTechnicien }}</strong>
+        </div>
+    </a>
+</div>
