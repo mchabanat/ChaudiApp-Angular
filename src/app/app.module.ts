@@ -9,6 +9,8 @@ import { ListeRapportsComponent } from './liste-rapports/liste-rapports.componen
 import { RapportComponent } from './rapport/rapport.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RapportDetailleComponent } from './rapport-detaille/rapport-detaille.component';
+import { AjouterRapportComponent } from './ajouter-rapport/ajouter-rapport.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,11 +20,13 @@ import { RapportDetailleComponent } from './rapport-detaille/rapport-detaille.co
     HomeComponent,
     ListeRapportsComponent,
     RapportComponent,
-    RapportDetailleComponent
+    RapportDetailleComponent,
+    AjouterRapportComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

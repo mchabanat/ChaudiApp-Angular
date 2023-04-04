@@ -22,4 +22,8 @@ export class RapportsService {
     }
     throw new Error('Rapport introuvable');
   }
+
+  addRapport(rapport: Rapport): Observable<Rapport> {
+    return this.http.post<Rapport>('http://localhost:3000/Rapport', rapport);
+  }
 }
