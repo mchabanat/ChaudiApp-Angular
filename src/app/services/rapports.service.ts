@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 import { Rapport } from 'src/models/rapport';
 
 @Injectable({
@@ -24,6 +24,11 @@ export class RapportsService {
   }
 
   addRapport(rapport: Rapport): Observable<Rapport> {
-    return this.http.post<Rapport>('http://localhost:3000/Rapport', rapport);
+    return this.getAllRapports().pipe(
+      map(rapports => [...rapports].sort((a,b) => a.id - b.id)),
+      map(rapports_tries => rapports_tries[rapports_tries.length-1]),
+      map(rapport_max => (rapport.id = rapport_max.id + 1)),
+      switchMap(() => this.http.post<Rapport>('http://localhost:3000/Rapport', rapport))
+    );
   }
 }

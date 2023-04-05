@@ -1,1 +1,47 @@
-<p>ajouter-rapport works!</p>
+<div class="form">
+    <h2>Nouveau Rapport</h2>
+    <form [formGroup]="formulaire">
+        <div class="form-group">
+            <label for="nomTechnicien">Nom du technicien</label>
+            <input type="text" class="form-control" id="nomTechnicien" formControlName="nomTechnicien">
+        </div>
+        <div class="form-group">
+            <label for="nomClient">Nom du client</label>
+            <input type="text" class="form-control" id="nomClient" formControlName="nomClient">
+        </div>
+        <div class="form-group">
+            <label for="adresseClient">Adresse du client</label>
+            <input type="text" class="form-control" id="adresseClient" formControlName="adresseClient">
+        </div>
+        <div class="form-group">
+            <label for="marque">Marque</label>
+            <input type="text" class="form-control" id="marque" formControlName="marque">
+        </div>
+        <div class="form-group">
+            <label for="modele">Modèle</label>
+            <input type="text" class="form-control" id="modele" formControlName="modele">
+        </div>
+        <div class="form-group">
+            <label for="numSerie">Numéro de série</label>
+            <input type="number" class="form-control" id="numSerie" formControlName="numSerie" maxlength="16" >
+        </div>
+        <div class="form-group">
+            <label for="dateMiseEnService">Date de mise en service</label>
+            <input type="date" class="form-control" id="dateMiseEnService" formControlName="dateMiseEnService">
+        </div>
+        <div class="form-group">
+            <label for="dateIntervention">Date de l'intervention</label>
+            <input type="date" class="form-control" id="dateIntervention" formControlName="dateIntervention">
+        </div>
+        <div class="form-group">
+            <label for="dureeIntervention">Durée de l'intervention (en minutes)</label>
+            <input type="text" class="form-control" id="dureeIntervention" formControlName="dureeIntervention">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="6" formControlName="description"></textarea>
+        </div>
+        
+        <button id="validator" type="submit" (click)="onAddRapport()" [disabled]="formulaire.invalid">Ajouter le CD</button>
+    </form>
+</div>
